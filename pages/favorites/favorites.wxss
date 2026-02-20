@@ -1,0 +1,158 @@
+/** pages/favorites/favorites.wxss */
+.container {
+  background-color: #f9fafb;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.tabs {
+  background: white;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+  color: #6a7282;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #2b7fff;
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: #2b7fff;
+  border-radius: 2rpx;
+}
+
+.content-scroll {
+  flex: 1;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.tutor-card, .project-card, .risk-card {
+  background: white;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.05);
+}
+
+.card-header {
+  display: flex;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background-color: #eee;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1e2939;
+  margin-bottom: 8rpx;
+}
+
+.school {
+  font-size: 24rpx;
+  color: #4a5565;
+  margin-bottom: 8rpx;
+}
+
+.direction {
+  font-size: 24rpx;
+  color: #155dfc;
+  background: #eff6ff;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-bottom: 12rpx;
+}
+
+.date {
+  font-size: 22rpx;
+  color: #99a1af;
+}
+
+.project-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1e2939;
+  margin-bottom: 12rpx;
+}
+
+.project-leader {
+  font-size: 26rpx;
+  color: #4a5565;
+  margin-bottom: 20rpx;
+}
+
+.project-progress {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #6a7282;
+  margin-bottom: 16rpx;
+}
+
+.project-progress progress {
+  flex: 1;
+  margin: 0 20rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.risk-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1e2939;
+}
+
+.risk-tag {
+  font-size: 24rpx;
+  color: #00bc7d;
+  background: rgba(0, 188, 125, 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.risk-type {
+  font-size: 26rpx;
+  color: #4a5565;
+  margin-bottom: 16rpx;
+}

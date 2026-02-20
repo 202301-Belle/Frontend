@@ -1,0 +1,94 @@
+<view class="container">
+  <!-- Header Section -->
+  <view class="header">
+    <image class="header-bg" src="/images/home-bg.png" mode="aspectFill"></image>
+    <view class="header-content">
+      <view class="title">导查查</view>
+      <view class="subtitle">
+        <text>导师信息一点通</text>
+        <text class="divider">|</text>
+        <text>合作对象全知晓</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Search Bar -->
+  <view class="search-bar-container">
+    <view class="search-bar">
+      <image class="search-icon" src="/images/search-icon.png"></image>
+      <input class="search-input" placeholder="搜索导师姓名、院校、研究领域、职称" placeholder-class="placeholder" bindconfirm="onSearch" />
+      <image class="camera-icon" src="/images/camera-icon.png"></image>
+    </view>
+  </view>
+
+  <!-- Quick Access Buttons -->
+  <view class="quick-access">
+    <view class="access-item" bindtap="openActionSheet">
+      <view class="icon-bg">
+        <image src="/images/tutor-icon-new.png"></image>
+      </view>
+      <text>查导师</text>
+    </view>
+    <view class="access-item" bindtap="navigateToCoop">
+      <view class="icon-bg">
+        <image src="/images/coop-icon-new.png"></image>
+      </view>
+      <text>查合作</text>
+    </view>
+    <view class="access-item" bindtap="navigateToFav">
+      <view class="icon-bg">
+        <image src="/images/fav-icon-new.png"></image>
+      </view>
+      <text>我的收藏</text>
+    </view>
+  </view>
+
+  <!-- Hot News Section -->
+  <view class="news-section">
+    <view class="section-header">
+      <text class="section-title">热点资讯</text>
+      <text class="more">更多 ></text>
+    </view>
+    <view class="news-list">
+      <view class="news-item" wx:for="{{newsList}}" wx:key="id">
+        <view class="news-title">{{item.title}}</view>
+        <view class="news-desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Action Sheet Mask -->
+  <view class="action-sheet-mask {{showActionSheet ? 'show' : ''}}" bindtap="closeActionSheet"></view>
+  
+  <!-- Action Sheet -->
+  <view class="action-sheet {{showActionSheet ? 'show' : ''}}">
+    <view class="sheet-header">
+      <text class="sheet-title">查导师</text>
+      <view class="close-btn" bindtap="closeActionSheet">
+        <image src="/images/close-icon.png"></image>
+      </view>
+    </view>
+    <view class="sheet-content">
+      <view class="sheet-item" bindtap="navigateToSearch">
+        <view class="sheet-icon-box blue">
+          <image src="/images/panorama-icon.png"></image>
+        </view>
+        <view class="sheet-info">
+          <text class="sheet-item-title">导师全景查询</text>
+          <text class="sheet-item-desc">全方位查看导师详细信息</text>
+        </view>
+        <image class="arrow-right" src="/images/arrow-right.png"></image>
+      </view>
+      <view class="sheet-item" bindtap="navigateToTutorLibrary">
+        <view class="sheet-icon-box blue">
+          <image src="/images/university-icon.png"></image>
+        </view>
+        <view class="sheet-info">
+          <text class="sheet-item-title">院校导师库</text>
+          <text class="sheet-item-desc">按院校浏览导师资源</text>
+        </view>
+        <image class="arrow-right" src="/images/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

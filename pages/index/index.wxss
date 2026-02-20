@@ -1,0 +1,287 @@
+/** pages/index/index.wxss */
+.container {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 0;
+  display: block;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 424rpx; /* 212px * 2 */
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 64rpx;
+  text-align: center;
+  color: white;
+}
+
+.title {
+  font-size: 64rpx; /* 32px * 2 */
+  font-weight: bold;
+  letter-spacing: 3rpx;
+  margin-bottom: 40rpx; /* Increased from 20rpx */
+}
+
+.subtitle {
+  font-size: 40rpx; /* 20px * 2 */
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.divider {
+  opacity: 0.6;
+}
+
+.search-bar-container {
+  position: relative;
+  margin-top: -55rpx; /* Increased overlap */
+  padding: 0 30rpx;
+  z-index: 2;
+}
+
+.search-bar {
+  background: white;
+  border-radius: 40rpx;
+  height: 110rpx; /* Increased height */
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.05);
+}
+
+.search-icon, .camera-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.search-input {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.placeholder {
+  color: #99a1af;
+}
+
+.quick-access {
+  background: white;
+  margin: 30rpx 30rpx;
+  padding: 40rpx 0;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+}
+
+.access-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.icon-bg {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 12rpx rgba(0,0,0,0.05);
+  background-color: #E6F7FF; /* Unified light blue background */
+}
+
+.icon-bg image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+/* Removed individual color classes */
+
+.access-item text {
+  font-size: 24rpx;
+  color: #364153;
+}
+
+.news-section {
+  padding: 0 30rpx 40rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1e2939;
+}
+
+.more {
+  font-size: 24rpx;
+  color: #6a7282;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.news-item {
+  background: white;
+  padding: 32rpx;
+  border-radius: 32rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.05);
+}
+
+.news-title {
+  font-size: 32rpx;
+  color: #1e2939;
+  margin-bottom: 16rpx;
+  line-height: 1.4;
+}
+
+.action-sheet-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.action-sheet-mask.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.action-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.action-sheet.show {
+  transform: translateY(0);
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx;
+  border-bottom: 1rpx solid #f3f4f6;
+}
+
+.sheet-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #101828;
+}
+
+.close-btn {
+  background: #f3f4f6;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.sheet-content {
+  padding: 30rpx 40rpx 30rpx;
+}
+
+.sheet-item {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  padding: 30rpx;
+  border-radius: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.sheet-item:last-child {
+  margin-bottom: 0;
+}
+
+.sheet-icon-box {
+  width: 96rpx;
+  height: 96rpx;
+  background: #2b7fff;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+}
+
+.sheet-icon-box image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.sheet-info {
+  flex: 1;
+}
+
+.sheet-item-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #101828;
+  margin-bottom: 8rpx;
+}
+
+.sheet-item-desc {
+  display: block;
+  font-size: 26rpx;
+  color: #6a7282;
+}
+
+.arrow-right {
+  width: 40rpx;
+  height: 40rpx;
+  opacity: 0.3;
+}
