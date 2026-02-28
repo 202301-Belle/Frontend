@@ -16,7 +16,6 @@ const SEARCH_DEBOUNCE_DELAY = 300;
 
 Page({
   data: {
-    showActionSheet: false,
     showCoopSheet: false,
     newsList: [
       {
@@ -100,26 +99,12 @@ Page({
     }, SEARCH_DEBOUNCE_DELAY);
   },
 
-  /**
-   * 打开查导师弹窗
-   */
-  openActionSheet() {
-    this.setData({ showActionSheet: true });
-  },
-
-  /**
-   * 关闭查导师弹窗
-   */
-  closeActionSheet() {
-    this.setData({ showActionSheet: false });
-  },
 
   /**
    * 关闭所有弹窗
    */
   closeAllSheets() {
     this.setData({ 
-      showActionSheet: false, 
       showCoopSheet: false 
     });
   },
@@ -133,13 +118,27 @@ Page({
   },
 
   /**
-   * 导航到搜索页面
+   * 导航到简单搜索页面
+   */
+  navigateToSimpleSearch() {
+    // 搜索功能不需要登录
+    if (this.closeActionSheet) {
+        this.closeActionSheet();
+    } else if (this.closeAllSheets) {
+        this.closeAllSheets();
+    }
+    
+    wx.navigateTo({
+      url: '/pages/search-simple/search-simple'
+    });
+  },
+
+  /**
+   * 导航到搜索页面 (高级筛选)
    */
   navigateToSearch() {
-    if (!authUtil.checkLogin('/pages/index/index')) {
-      return;
-    }
-    this.closeActionSheet();
+    // 搜索功能不需要登录
+    this.closeAllSheets();
     this.navigateToPage(PAGE_ROUTES.SEARCH);
   },
 
@@ -150,7 +149,7 @@ Page({
     if (!authUtil.checkLogin('/pages/index/index')) {
       return;
     }
-    this.closeActionSheet();
+    this.closeAllSheets();
     this.navigateToPage(PAGE_ROUTES.TUTOR_LIBRARY);
   },
 

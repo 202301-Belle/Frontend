@@ -30,9 +30,8 @@
 
     <button class="login-btn" bindtap="onLogin">登录</button>
     
-    <button class="guest-btn" bindtap="onGuestMode">
-      <text class="guest-icon">👤</text>
-      <text>游客模式</text>
+    <button class="wechat-login-btn" bindtap="onBypassLogin">
+      <text>一键登录</text>
     </button>
 
     <view class="links">
@@ -49,18 +48,6 @@
           </view>
         </label>
       </checkbox-group>
-    </view>
-
-    <!-- Third Party Login -->
-    <view class="third-party">
-      <view class="third-party-item" bindtap="onWeChatLogin">
-        <image src="/images/wechat-icon.png"></image>
-        <text>微信登录</text>
-      </view>
-      <view class="third-party-item" bindtap="onQQLogin">
-        <image src="/images/qq-icon.png"></image>
-        <text>QQ登录</text>
-      </view>
     </view>
   </view>
 </view>

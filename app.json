@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/login/login",
     "pages/search/search",
+    "pages/search-simple/search-simple",
     "pages/tutor-detail/tutor-detail",
     "pages/user/user",
     "pages/favorites/favorites",
@@ -40,6 +41,18 @@
         "selectedIconPath": "images/home-active.png"
       },
       {
+        "pagePath": "pages/coop-mining/coop-mining",
+        "text": "社工模型",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/coop-icon-new.png"
+      },
+      {
+        "pagePath": "pages/research-match/research-match",
+        "text": "智能推导师",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-active.png"
+      },
+      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/user.png",
@@ -50,11 +63,6 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
-  "permission": {
-    "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
-    }
-  },
   "requiredBackgroundModes": [],
   "networkTimeout": {
     "request": 10000,

@@ -59,6 +59,8 @@
   flex: 1;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-item {
@@ -105,30 +107,30 @@
   border: none;
 }
 
-.guest-btn {
-  background: transparent;
-  color: #666;
-  border: 2rpx solid #ddd;
+.wechat-login-btn {
+  background: #07c160;
+  color: white;
   border-radius: 32rpx;
-  font-size: 30rpx;
-  padding: 18rpx 0;
+  font-size: 32rpx;
+  padding: 20rpx 0;
   margin-top: 24rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12rpx;
+  box-shadow: 0 8rpx 16rpx rgba(7, 193, 96, 0.2);
 }
 
-.guest-btn::after {
+.wechat-login-btn::after {
   border: none;
 }
 
-.guest-btn:active {
-  background: #f8f9fa;
+.wechat-login-btn:active {
+  background: #06ad56;
 }
 
-.guest-icon {
-  font-size: 32rpx;
+.wechat-icon {
+  width: 48rpx;
+  height: 48rpx;
 }
 
 .links {
@@ -140,7 +142,8 @@
 }
 
 .agreement {
-  margin-top: 60rpx;
+  margin-top: auto;
+  padding-bottom: 40rpx;
 }
 
 .checkbox-label {
@@ -157,29 +160,4 @@
 
 .link {
   color: #2b7fff;
-}
-
-.third-party {
-  display: flex;
-  justify-content: center;
-  gap: 80rpx;
-  margin-top: 80rpx;
-  padding-bottom: 40rpx;
-}
-
-.third-party-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16rpx;
-}
-
-.third-party-item image {
-  width: 88rpx;
-  height: 88rpx;
-}
-
-.third-party-item text {
-  font-size: 24rpx;
-  color: #364153;
 }

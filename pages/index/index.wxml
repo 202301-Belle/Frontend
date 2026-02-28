@@ -14,21 +14,19 @@
 
   <!-- Search Bar -->
   <view class="search-bar-container">
-    <view class="search-bar">
+    <view class="search-bar" bindtap="navigateToSimpleSearch">
       <image class="search-icon" src="/images/search-icon.png" mode="aspectFit"></image>
       <input class="search-input" 
              placeholder="搜索导师姓名、院校、研究领域、职称" 
              placeholder-class="placeholder" 
-             bindconfirm="onSearch" 
-             confirm-type="search"
-             maxlength="50" />
+             disabled="true" />
       <image class="camera-icon" src="/images/camera-icon.png" mode="aspectFit"></image>
     </view>
   </view>
 
   <!-- Quick Access Buttons -->
   <view class="quick-access">
-    <view class="access-item" bindtap="openActionSheet">
+    <view class="access-item" bindtap="navigateToSearch">
       <view class="icon-bg">
         <image src="/images/tutor-icon-new.png" mode="aspectFit"></image>
       </view>
@@ -68,37 +66,6 @@
         catchtouchmove="preventDefault"
         wx:if="{{showActionSheet || showCoopSheet}}"></view>
   
-  <!-- 查导师 Action Sheet -->
-  <view class="action-sheet {{showActionSheet ? 'show' : ''}}" wx:if="{{showActionSheet}}">
-    <view class="sheet-header">
-      <text class="sheet-title">查导师</text>
-      <view class="close-btn" bindtap="closeActionSheet" aria-label="关闭">
-        <image src="/images/close-icon.png" mode="aspectFit"></image>
-      </view>
-    </view>
-    <view class="sheet-content">
-      <view class="sheet-item" bindtap="navigateToSearch">
-        <view class="sheet-icon-box blue">
-          <image src="/images/panorama-icon.png" mode="aspectFit"></image>
-        </view>
-        <view class="sheet-info">
-          <text class="sheet-item-title">导师全景查询</text>
-          <text class="sheet-item-desc">全方位查看导师详细信息</text>
-        </view>
-        <image class="arrow-right" src="/images/arrow-right.png" mode="aspectFit"></image>
-      </view>
-      <view class="sheet-item" bindtap="navigateToTutorLibrary">
-        <view class="sheet-icon-box blue">
-          <image src="/images/university-icon.png" mode="aspectFit"></image>
-        </view>
-        <view class="sheet-info">
-          <text class="sheet-item-title">院校导师库</text>
-          <text class="sheet-item-desc">按院校浏览导师资源</text>
-        </view>
-        <image class="arrow-right" src="/images/arrow-right.png" mode="aspectFit"></image>
-      </view>
-    </view>
-  </view>
 
   <!-- 查合作 Action Sheet -->
   <view class="action-sheet {{showCoopSheet ? 'show' : ''}}" wx:if="{{showCoopSheet}}">
