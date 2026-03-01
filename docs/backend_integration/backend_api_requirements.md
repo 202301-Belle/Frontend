@@ -36,14 +36,26 @@
     *   `department`: 学院筛选 (可选)
     *   `city`: 城市筛选 (可选)
 *   **输出**:
-    *   `list`: 导师简略信息列表 `[{ id, name, title, school, department, tags, avatar }]`
+    *   `list`: 导师简略信息列表 `[{ id, name, title, school, department, tags, avatar, direction, desc, titleTag }]` <!-- Added direction, desc, titleTag based on frontend usage -->
     *   `total`: 总记录数
 
 #### B. 导师详情 (Get Tutor Detail)
 *   **接口**: `GET /api/tutor/detail/:id`
 *   **参数**: `id` (导师ID)
 *   **输出**:
-    *   `tutor`: 包含爬虫抓取的所有详细字段 (`bio`, `papers`, `projects`, `coops`, `students`, `risks`, `socials` 等)。
+    *   `tutor`: 包含爬虫抓取的所有详细字段。
+        *   基础信息: `id`, `name`, `avatar`, `school`, `department`, `tags`, `bio`, `direction`, `titleTag` <!-- Added direction, titleTag -->
+        *   详细板块:
+            *   `growthPath`: 成长脉络 `[{ year, content, type }]` <!-- Added based on frontend usage -->
+            *   `achievements`: 学术成果描述 (String) <!-- Added based on frontend usage -->
+            *   `papers`: 论文列表 `[{ id, title, journal, year }]`
+            *   `coops`: 合作资源 `[{ id, name, type, desc }]`
+            *   `guidance`: 学生培养描述 (String) <!-- Added based on frontend usage -->
+            *   `students`: 学生列表 `[{ id, name, year, dest }]`
+            *   `projects`: 项目列表 `[{ id, title, role, desc }]`
+            *   `risks`: 风险排查 `[{ id, type, content }]`
+            *   `service`: 社会兼职描述 (String) <!-- Added based on frontend usage -->
+            *   `socials`: 社会关系列表 `[{ id, role, org }]`
     *   `isCollected`: Boolean (当前用户是否收藏)
 
 ### 2.3 业务交互模块 (Interaction)
