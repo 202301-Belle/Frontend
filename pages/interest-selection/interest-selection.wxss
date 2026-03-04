@@ -7,24 +7,71 @@
   box-sizing: border-box;
 }
 
-.filter-wrapper {
+.main-scroll {
   flex: 1;
-  padding: 40rpx 30rpx;
+  overflow-y: auto;
+  /* Ensure scroll view takes remaining space */
+}
+
+.content-wrapper {
+  padding: 30rpx;
+}
+
+.section-block {
+  margin-bottom: 40rpx;
+}
+
+.section-header {
   display: flex;
-  flex-direction: column;
-  overflow: hidden; /* Important for inner scroll */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  /* Make header clickable */
+  cursor: pointer;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* Arrow icon */
+.arrow {
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 4rpx solid #333;
+  border-bottom: 4rpx solid #333;
+  transform: rotate(45deg); /* Down (expanded) */
+  margin-right: 16rpx;
+  transition: transform 0.2s ease;
+  margin-bottom: 4rpx;
+}
+
+.arrow.collapsed {
+  transform: rotate(-45deg); /* Right (collapsed) */
+  margin-bottom: 0;
+  margin-left: 4rpx; /* Slight adjustment */
 }
 
 .section-title {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: bold;
   color: #333;
-  margin-bottom: 24rpx;
-  margin-top: 20rpx;
 }
 
-.section-title:first-child {
-  margin-top: 0;
+.select-all-btn {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.select-all-text {
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 10rpx;
 }
 
 .tags-wrapper {
@@ -33,19 +80,8 @@
   gap: 20rpx;
 }
 
-.tags-wrapper.subjects {
-  margin-bottom: 40rpx;
-  /* Subjects usually fit in one view or wrap slightly */
-}
-
-.directions-scroll {
-  flex: 1;
-  /* Ensure scroll view takes remaining space */
-  overflow-y: auto;
-}
-
 .tags-wrapper.directions {
-  padding-bottom: 40rpx;
+  /* Inherit generic tags-wrapper styles */
 }
 
 .tag {
@@ -63,17 +99,8 @@
   align-items: center;
 }
 
-/* Specific styles for Subject vs Direction if needed */
-
-/* Subject Tags - when selected */
-.subject-tag.selected {
-  background-color: #e6f7ff; /* Light blue background */
-  color: #007aff; /* Blue text */
-  font-weight: 500;
-}
-
 /* Direction Tags - when selected */
-.direction-tag.selected {
+.tag.selected {
   background-color: #007aff; /* Solid blue */
   color: #fff; /* White text */
   font-weight: 500;
@@ -90,6 +117,46 @@
   bottom: 0;
   z-index: 10;
   padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.selected-tags-area {
+  width: 100%;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.selected-tags-scroll {
+  display: flex;
+  width: 100%;
+  height: 60rpx; /* Adjusted height */
+  flex-direction: row;
+}
+
+.selected-tags-scroll ::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.selected-chip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  background-color: #007aff;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  margin-right: 16rpx;
+  height: 56rpx;
+  transition: all 0.2s;
+}
+
+.chip-close-icon {
+  margin-left: 8rpx;
+  /* icon size is handled by the component attribute, but we ensure layout flow */
 }
 
 .match-info {

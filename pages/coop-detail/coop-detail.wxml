@@ -19,12 +19,8 @@
       <text class="info-value">{{projectInfo.partner}}</text>
     </view>
     <view class="info-row">
-      <text class="info-label">项目启动：</text>
+      <text class="info-label">项目时间：</text>
       <text class="info-value">{{projectInfo.startDate}}</text>
-    </view>
-    <view class="info-row">
-      <text class="info-label">项目总金额：</text>
-      <text class="info-value highlight">{{projectInfo.budget}}</text>
     </view>
     <view class="info-row">
       <text class="info-label">对接学者：</text>
